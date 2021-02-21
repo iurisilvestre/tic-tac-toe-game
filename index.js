@@ -38,6 +38,7 @@ function resetGame() {
   $msgPopup.hide();
   $cells.text("");
   $cells.removeClass("win-cell-blue");
+  $cells.addClass("use-hover");
   $cells.click(playCell);
   playIcon = "X";
 }
@@ -47,6 +48,7 @@ function winGame() {
   function winMessage(winValue) {
     $cells.off("click");
     if (winValue == "O") {
+      $cells.removeClass("use-hover");
       $msgPopup
         .html(
           `<div id="msg-box">
@@ -55,6 +57,7 @@ function winGame() {
         )
         .show();
     } else {
+      $cells.removeClass("use-hover");
       $msgPopup
         .html(
           `<div id="msg-box">
@@ -101,6 +104,7 @@ function winGame() {
 function draw() {
   if ($cells.text().length == 9 && !$cells.hasClass("win-cell-blue")) {
     $cells.off("click");
+    $cells.removeClass("use-hover");
     $msgPopup
       .html(
         `<div id="msg-box">

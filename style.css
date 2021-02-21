@@ -13,9 +13,10 @@ body {
   align-items: center;
   flex-direction: column;
 }
-p {
+
+h2 {
+  font-size: 50px;
   margin-bottom: 20px;
-  font-size: 40px;
 }
 
 #board {
@@ -37,7 +38,7 @@ p {
   cursor: pointer;
 }
 
-.cell:hover {
+.use-hover:hover {
   background-color: #f0f0f0;
 }
 
@@ -80,4 +81,14 @@ p {
 
 span h1 {
   color: red;
+}
+
+@media only screen and (max-width: 550px) {
+  #board {
+    width: 300px;
+    height: 400px;
+  }
+  .cell {
+    font-size: 35px;
+  }
 }
